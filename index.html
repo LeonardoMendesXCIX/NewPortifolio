@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
 
-    <!-- Open Graph -->
+    <!-- SEO e Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portfólio">
     <meta property="og:description" content="Confira meus projetos, habilidades e entre em contato.">
@@ -36,6 +36,7 @@
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="#contato">Contate-me</a></li>
         </ul>
+        <button class="toggle-dark">🌙</button>
     </nav>
 
     <main>
@@ -70,6 +71,16 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const toggle = document.querySelector('.toggle-dark');
+        const body = document.body;
+
+        toggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        });
+    </script>
 
 </body>
 </html>
