@@ -5,24 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
 
-    <!-- SEO e Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Portfólio">
-    <meta property="og:description" content="Confira meus projetos, habilidades e entre em contato.">
-    <meta property="og:image" content="https://new-portifolio-gamma.vercel.app/assets/preview.png">
-    <meta property="og:url" content="https://new-portifolio-gamma.vercel.app">
-    <meta property="og:site_name" content="Portfólio">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portfólio">
-    <meta name="twitter:description" content="Confira meus projetos, habilidades e entre em contato.">
-    <meta name="twitter:image" content="https://new-portifolio-gamma.vercel.app/assets/preview.png">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://new-portifolio-gamma.vercel.app/assets/favicon.ico" type="image/x-icon">
-
-    <!-- CSS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,13 +13,17 @@
 
     <!-- Navbar -->
     <nav class="navbar">
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contate-me</a></li>
-        </ul>
-        <button class="toggle-dark">🌙</button>
+        <div class="nav-left">
+            <ul>
+                <li><a href="#"><i data-lucide="home"></i> Início</a></li>
+                <li><a href="#sobre"><i data-lucide="user"></i> Sobre</a></li>
+                <li><a href="#projetos"><i data-lucide="briefcase"></i> Projetos</a></li>
+                <li><a href="#contato"><i data-lucide="mail"></i> Contate-me</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <button class="toggle-dark"><i data-lucide="moon"></i></button>
+        </div>
     </nav>
 
     <main>
@@ -44,41 +31,32 @@
 
         <div class="container" style="--width: 100px; --height: 50px; --quantity: 10;">
             <div class="carrossel">
-                <div class="item" style="--delay: 1s"><img src="./assets/item1-1.png" alt="Item 1"></div>
-                <div class="item" style="--delay: 2s"><img src="./assets/item1-2.png" alt="Item 2"></div>
-                <div class="item" style="--delay: 3s"><img src="./assets/item1-3.png" alt="Item 3"></div>
-                <div class="item" style="--delay: 4s"><img src="./assets/item1-4.png" alt="Item 4"></div>
-                <div class="item" style="--delay: 5s"><img src="./assets/item1-5.png" alt="Item 5"></div>
-                <div class="item" style="--delay: 6s"><img src="./assets/item1-6.png" alt="Item 6"></div>
-                <div class="item" style="--delay: 7s"><img src="./assets/item1-7.png" alt="Item 7"></div>
-                <div class="item" style="--delay: 8s"><img src="./assets/item1-8.png" alt="Item 8"></div>
-                <div class="item" style="--delay: 9s"><img src="./assets/item1-9.png" alt="Item 9"></div>
-                <div class="item" style="--delay: 10s"><img src="./assets/item1-10.png" alt="Item 10"></div>
+                <!-- Seus itens -->
             </div>
         </div>
 
         <div class="container reverse" style="--width: 100px; --height: 200px; --quantity: 9;">
             <div class="carrossel">
-                <div class="item" style="--delay: 1s"><img src="./assets/item2-1.png" alt="Item 1"></div>
-                <div class="item" style="--delay: 2s"><img src="./assets/item2-2.png" alt="Item 2"></div>
-                <div class="item" style="--delay: 3s"><img src="./assets/item2-3.png" alt="Item 3"></div>
-                <div class="item" style="--delay: 4s"><img src="./assets/item2-4.png" alt="Item 4"></div>
-                <div class="item" style="--delay: 5s"><img src="./assets/item2-5.png" alt="Item 5"></div>
-                <div class="item" style="--delay: 6s"><img src="./assets/item2-6.png" alt="Item 6"></div>
-                <div class="item" style="--delay: 7s"><img src="./assets/item2-7.png" alt="Item 7"></div>
-                <div class="item" style="--delay: 8s"><img src="./assets/item2-8.png" alt="Item 8"></div>
-                <div class="item" style="--delay: 9s"><img src="./assets/item2-9.png" alt="Item 9"></div>
+                <!-- Seus itens -->
             </div>
         </div>
     </main>
 
     <script>
+        lucide.createIcons();
+
         const toggle = document.querySelector('.toggle-dark');
         const body = document.body;
+        const icon = toggle.querySelector('i');
 
         toggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            toggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            if (body.classList.contains('dark-mode')) {
+                icon.setAttribute('data-lucide', 'sun');
+            } else {
+                icon.setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
         });
     </script>
 
