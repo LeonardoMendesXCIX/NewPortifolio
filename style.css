@@ -72,3 +72,34 @@ main {
         left: 100%;
     }
 }
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid black;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #555;
+    transform: scale(1.05);
+}
