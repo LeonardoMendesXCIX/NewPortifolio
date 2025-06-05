@@ -22,9 +22,11 @@
         <a href="#contato">Contate-me</a>
     </nav>
 
-    <main>
+    <main id="inicio">
+        <!-- Banner -->
         <img src="./assets/portfolio3.png" alt="Banner do portfólio" class="portfolio">
 
+        <!-- Carrossel 1 -->
         <div class="container" style="--width: 100px; --height: 50px; --quantity: 10;">
             <div class="carrossel">
                 <div class="item" style="--delay: 1s"><img src="./assets/item1-1.png" alt="Item 1"></div>
@@ -40,6 +42,7 @@
             </div>
         </div>
 
+        <!-- Carrossel 2 -->
         <div class="container reverse" style="--width: 100px; --height: 200px; --quantity: 9;">
             <div class="carrossel">
                 <div class="item" style="--delay: 1s"><img src="./assets/item2-1.png" alt="Item 1"></div>
@@ -53,12 +56,44 @@
                 <div class="item" style="--delay: 9s"><img src="./assets/item2-9.png" alt="Item 9"></div>
             </div>
         </div>
+
+        <!-- Seta Navegação -->
+        <div class="arrow" onclick="nextSection()">⬇️</div>
     </main>
+
+    <!-- Seção Sobre -->
+    <section id="sobre" class="section">
+        <h2>Sobre</h2>
+        <p>Sou Leonardo Mendes, apaixonado por tecnologia, desenvolvimento e inovação. Atualmente atuo na indústria e estou em constante evolução, estudando logística e desenvolvimento de software.</p>
+    </section>
+
+    <!-- Seção Projetos -->
+    <section id="projetos" class="section">
+        <h2>Projetos</h2>
+        <p>Aqui estarão listados meus principais projetos, incluindo desenvolvimento web, automações e soluções tecnológicas.</p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato" class="section">
+        <h2>Contate-me</h2>
+        <p>Entre em contato através do meu e-mail, redes sociais ou envie uma mensagem pelo formulário (em breve).</p>
+    </section>
 
     <!-- Rodapé -->
     <footer class="footer">
         <p>© Leonardo Mendes, todos os direitos reservados.</p>
     </footer>
+
+    <!-- Script para navegar com a seta -->
+    <script>
+        const sections = ["#sobre", "#projetos", "#contato", "#inicio"];
+        let currentSection = 0;
+
+        function nextSection() {
+            currentSection = (currentSection + 1) % sections.length;
+            document.querySelector(sections[currentSection]).scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
 
 </body>
 </html>
