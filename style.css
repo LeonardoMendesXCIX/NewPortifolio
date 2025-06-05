@@ -17,7 +17,7 @@ main {
     width: 100%;
     padding: 20px;
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 }
 
 img.portfolio {
@@ -123,33 +123,6 @@ img.portfolio {
     color: black;
 }
 
-/* Bottom Navbar */
-.bottom-navbar {
-    width: 100%;
-    background-color: #f7f7f7;
-    border-top: 2px solid black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.bottom-navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.bottom-navbar a:hover {
-    color: black;
-}
-
 /* Responsivo */
 @media (max-width: 768px) {
     .container {
@@ -166,12 +139,11 @@ img.portfolio {
         max-width: 100%;
     }
 
-    .bottom-navbar a,
     .top-navbar a {
         font-size: 12px;
     }
 
     .footer {
-        padding-bottom: 50px; /* Espaço para navbar inferior não sobrepor */
+        padding-bottom: 20px;
     }
 }
