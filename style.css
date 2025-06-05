@@ -1,3 +1,4 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -11,10 +12,20 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     width: 100%;
+    padding: 20px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
+img.portfolio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Carrossel */
 .container {
     width: 100%;
     height: var(--height);
@@ -83,4 +94,84 @@ main {
     font-weight: 600;
     font-size: 14px;
     color: #333;
+}
+
+/* Top Navbar */
+.top-navbar {
+    width: 100%;
+    background-color: #f7f7f7;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.top-navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.top-navbar a:hover {
+    color: black;
+}
+
+/* Bottom Navbar */
+.bottom-navbar {
+    width: 100%;
+    background-color: #f7f7f7;
+    border-top: 2px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.bottom-navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.bottom-navbar a:hover {
+    color: black;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        --width: 80px;
+        --height: 40px;
+    }
+
+    .item img {
+        width: 100%;
+    }
+
+    img.portfolio {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .bottom-navbar a,
+    .top-navbar a {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding-bottom: 50px; /* Espaço para navbar inferior não sobrepor */
+    }
 }
