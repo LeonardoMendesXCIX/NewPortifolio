@@ -15,7 +15,7 @@ body {
     width: 100%;
     background-color: #f7f7f7;
     border-bottom: 2px solid black;
-    padding: 15px 30px;
+    padding: 15px 50px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,20 +24,10 @@ body {
     align-items: center;
 }
 
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-left .logo {
-    font-size: 22px;
-}
-
 .nav-left ul {
     list-style: none;
     display: flex;
-    gap: 24px;
+    gap: 40px;
 }
 
 .nav-left ul li a {
@@ -45,7 +35,7 @@ body {
     color: black;
     font-weight: 600;
     font-size: 16px;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border: 2px solid black;
     border-radius: 8px;
     background-color: white;
@@ -62,80 +52,22 @@ body {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.toggle-dark {
+.nav-right .toggle-dark {
     border: 2px solid black;
     background-color: white;
     color: black;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.3s ease;
 }
 
-.toggle-dark:hover {
+.nav-right .toggle-dark:hover {
     background-color: black;
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-/* Hamburger */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background: black;
-    border-radius: 3px;
-    transition: 0.3s;
-}
-
-/* Hamburger Animation */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-left ul {
-        position: absolute;
-        top: 70px;
-        right: 30px;
-        background-color: #f7f7f7;
-        border: 2px solid black;
-        border-radius: 8px;
-        flex-direction: column;
-        padding: 10px 20px;
-        display: none;
-    }
-
-    .nav-left ul.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
 }
 
 /* Dark Mode */
@@ -147,11 +79,6 @@ body.dark-mode {
 body.dark-mode .navbar {
     background-color: #1f1f1f;
     border-bottom: 2px solid white;
-}
-
-body.dark-mode .nav-left ul {
-    background-color: #1f1f1f;
-    border-color: white;
 }
 
 body.dark-mode .nav-left ul li a {
@@ -174,8 +101,4 @@ body.dark-mode .toggle-dark {
 body.dark-mode .toggle-dark:hover {
     background-color: white;
     color: black;
-}
-
-body.dark-mode .hamburger span {
-    background: white;
 }

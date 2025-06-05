@@ -13,8 +13,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-left">
-            <div class="logo">🏠</div>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="#">🏠 Início</a></li>
                 <li><a href="#sobre">👤 Sobre</a></li>
                 <li><a href="#projetos">💼 Projetos</a></li>
@@ -23,36 +22,22 @@
         </div>
         <div class="nav-right">
             <button class="toggle-dark">🌙</button>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
     <main>
         <img src="./assets/portfolio3.png" alt="Banner do portfólio" class="portfolio" height="420px">
 
-        <!-- Seus carrosséis e conteúdo permanecem aqui -->
+        <!-- Seus carrosséis e conteúdos permanecem -->
     </main>
 
     <script>
         const toggle = document.querySelector('.toggle-dark');
         const body = document.body;
-        const icon = toggle;
 
         toggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            icon.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
-        });
-
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            toggle.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
         });
     </script>
 
