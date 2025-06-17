@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,34 +6,20 @@
 
 body {
     background-color: #e5e5e5;
-    scroll-behavior: smooth;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
     width: 100%;
-    padding: 20px;
-    padding-top: 80px;
-    padding-bottom: 40px;
 }
 
-/* Banner */
-img.portfolio {
-    height: 420px;
-    width: auto;
-    max-width: 100%;
-    object-fit: cover;
-}
-
-/* Carrossel */
 .container {
     width: 100%;
     height: var(--height);
-    overflow: hidden;
     mask-image: linear-gradient(to right, transparent, #000 10% 90%, transparent);
+    overflow: hidden; /* Adicionado */
 }
 
 .carrossel {
@@ -59,8 +44,6 @@ img.portfolio {
 
 .item img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
 }
 
 .container:hover .item {
@@ -87,104 +70,5 @@ img.portfolio {
     }
     to {
         left: 100%;
-    }
-}
-
-/* Navbar */
-.top-navbar {
-    width: 100%;
-    background-color: #f7f7f7;
-    border-bottom: 2px solid black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-.top-navbar a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.top-navbar a:hover {
-    color: black;
-}
-
-/* Setas */
-.arrow {
-    font-size: 30px;
-    margin-top: 20px;
-    cursor: pointer;
-    animation: bounce 1.5s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(8px);
-    }
-}
-
-/* Seções */
-.section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.section h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.section p {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #333;
-}
-
-/* Footer */
-.footer {
-    width: 100%;
-    background-color: #f7f7f7;
-    border-top: 2px solid black;
-    text-align: center;
-    padding: 15px 0;
-    font-weight: 600;
-    font-size: 14px;
-    color: #333;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .container {
-        --width: 70px;
-        --height: 40px;
-    }
-
-    img.portfolio {
-        width: 100%;
-        height: 300px;
-    }
-
-    .item img {
-        object-fit: contain;
-    }
-
-    .top-navbar a {
-        font-size: 12px;
-    }
-
-    .footer {
-        padding-bottom: 20px;
     }
 }
